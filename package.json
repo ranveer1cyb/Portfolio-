@@ -1,0 +1,19 @@
+{
+  "name": "ranveer-singh-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for Ranveer Singh - B.Tech Student at JECRC University",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 3000"
+  },
+  "keywords": [
+    "portfolio",
+    "ranveer-singh",
+    "btech",
+    "jecrc",
+    "ai",
+    "web-development"
+  ],
+  "author": "Ranveer Singh <girvarsingh774@gmail.com>",
+  "license": "MIT"
+}

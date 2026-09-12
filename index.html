@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO & Meta Tags -->
+  <title>Ranveer Singh | B.Tech Student & AI Enthusiast Portfolio</title>
+  <meta name="description" content="Personal portfolio of Ranveer Singh - B.Tech Student at JECRC University, Jaipur. Exploring Artificial Intelligence, Modern Web Development, and Digital Productivity." />
+  <meta name="keywords" content="Ranveer Singh, Portfolio, B.Tech, JECRC University, Jaipur, Artificial Intelligence, Web Development, Generative AI, Python, JavaScript, Tailwind CSS" />
+  <meta name="author" content="Ranveer Singh" />
+  <meta property="og:title" content="Ranveer Singh | B.Tech Student & AI Enthusiast Portfolio" />
+  <meta property="og:description" content="Explore projects, skills, education, and achievements of Ranveer Singh from JECRC University." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Tailwind CSS CDN & Configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              900: '#312e81'
+            },
+            darkBg: '#090d16',
+            darkCard: '#111827',
+            lightBg: '#f8fafc',
+            lightCard: '#ffffff'
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            code: ['Fira Code', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="bg-darkBg text-slate-100 transition-colors duration-300 relative selection:bg-indigo-500 selection:text-white">
+
+  <!-- Interactive Particle Constellation Canvas -->
+  <canvas id="bg-particles-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+  <!-- Ambient Glow Background Orbs -->
+  <div class="fixed top-0 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+  <div class="fixed bottom-1/4 right-1/4 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 3s;"></div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 max-w-sm w-full pointer-events-none [&>*]:pointer-events-auto"></div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-40 px-4 sm:px-8 py-4 transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-2xl px-5 py-3.5 shadow-xl">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-400 flex items-center justify-center font-heading font-extrabold text-white text-lg shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform">
+          RS
+        </div>
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-base sm:text-lg text-white group-hover:text-indigo-400 transition-colors">Ranveer Singh</span>
+          <span class="text-[10px] text-slate-400 tracking-wider uppercase font-medium">B.Tech • JECRC</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1.5 lg:gap-3 text-sm font-medium">
+        <a href="#hero" class="desktop-nav-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all">Home</a>
+        <a href="#about" class="desktop-nav-link px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all">About</a>
+        <a href="#education" class="desktop-nav-link px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all">Education</a>
+        <a href="#skills" class="desktop-nav-link px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all">Skills</a>
+        <a href="#projects" class="desktop-nav-link px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all">Projects</a>
+        <a href="#achievements" class="desktop-nav-link px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all">Achievements</a>
+        <a href="#contact" class="desktop-nav-link px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all">Contact</a>
+      </nav>
+
+      <!-- Action Controls (Theme Toggle, Edit Links, Social Icons) -->
+      <div class="hidden sm:flex items-center gap-2">
+        <!-- Live Social Icons -->
+        <a href="#" class="dynamic-github-link w-9 h-9 rounded-xl glass-card flex items-center justify-center text-slate-300 hover:text-white hover:bg-indigo-600/30 transition-all text-base" title="GitHub Profile">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="#" class="dynamic-linkedin-link w-9 h-9 rounded-xl glass-card flex items-center justify-center text-slate-300 hover:text-white hover:bg-indigo-600/30 transition-all text-base" title="LinkedIn Profile">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+        <!-- Edit Socials Button -->
+        <button class="open-edit-social-btn px-3 py-2 rounded-xl glass-card text-xs font-semibold text-indigo-300 hover:text-white hover:bg-indigo-600/30 flex items-center gap-1.5 transition-all border border-indigo-500/30" title="Edit LinkedIn & GitHub Links">
+          <i class="fa-solid fa-pen-to-square text-xs"></i>
+          <span class="hidden lg:inline">Edit Links</span>
+        </button>
+
+        <!-- Theme Switcher -->
+        <button id="theme-toggle-btn" class="w-9 h-9 rounded-xl glass-card flex items-center justify-center transition-all hover:scale-105" title="Toggle Dark/Light Mode">
+          <i id="theme-toggle-icon" class="fa-solid fa-sun text-amber-400 text-base"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex items-center gap-2 md:hidden">
+        <button class="open-edit-social-btn p-2 rounded-xl glass-card text-indigo-400" title="Edit Links">
+          <i class="fa-solid fa-pen-to-square text-sm"></i>
+        </button>
+        <button id="mobile-menu-toggle" class="p-2 rounded-xl glass-card text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars-staggered text-lg"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div id="mobile-drawer-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <div id="mobile-drawer" class="fixed top-0 right-0 w-72 max-w-[85vw] h-full bg-slate-900/95 backdrop-blur-xl border-l border-slate-800 z-50 p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-cyan-400 flex items-center justify-center font-heading font-extrabold text-white text-sm">
+            RS
+          </div>
+          <span class="font-heading font-bold text-white">Ranveer Singh</span>
+        </div>
+        <button id="close-mobile-menu-btn" class="p-2 rounded-lg text-slate-400 hover:text-white">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-2 mt-6">
+        <a href="#hero" class="mobile-nav-link py-2.5 px-4 rounded-xl text-slate-200 hover:bg-indigo-600/20 hover:text-indigo-300 transition-colors font-medium flex items-center gap-3">
+          <i class="fa-solid fa-house text-indigo-400 w-5"></i> Home
+        </a>
+        <a href="#about" class="mobile-nav-link py-2.5 px-4 rounded-xl text-slate-200 hover:bg-indigo-600/20 hover:text-indigo-300 transition-colors font-medium flex items-center gap-3">
+          <i class="fa-solid fa-user text-indigo-400 w-5"></i> About Me
+        </a>
+        <a href="#education" class="mobile-nav-link py-2.5 px-4 rounded-xl text-slate-200 hover:bg-indigo-600/20 hover:text-indigo-300 transition-colors font-medium flex items-center gap-3">
+          <i class="fa-solid fa-graduation-cap text-indigo-400 w-5"></i> Education
+        </a>
+        <a href="#skills" class="mobile-nav-link py-2.5 px-4 rounded-xl text-slate-200 hover:bg-indigo-600/20 hover:text-indigo-300 transition-colors font-medium flex items-center gap-3">
+          <i class="fa-solid fa-code text-indigo-400 w-5"></i> Skills
+        </a>
+        <a href="#projects" class="mobile-nav-link py-2.5 px-4 rounded-xl text-slate-200 hover:bg-indigo-600/20 hover:text-indigo-300 transition-colors font-medium flex items-center gap-3">
+          <i class="fa-solid fa-layer-group text-indigo-400 w-5"></i> Projects
+        </a>
+        <a href="#achievements" class="mobile-nav-link py-2.5 px-4 rounded-xl text-slate-200 hover:bg-indigo-600/20 hover:text-indigo-300 transition-colors font-medium flex items-center gap-3">
+          <i class="fa-solid fa-trophy text-indigo-400 w-5"></i> Achievements
+        </a>
+        <a href="#contact" class="mobile-nav-link py-2.5 px-4 rounded-xl text-slate-200 hover:bg-indigo-600/20 hover:text-indigo-300 transition-colors font-medium flex items-center gap-3">
+          <i class="fa-solid fa-envelope text-indigo-400 w-5"></i> Contact
+        </a>
+      </nav>
+    </div>
+
+    <!-- Mobile Drawer Footer Actions -->
+    <div class="pt-6 border-t border-slate-800 space-y-3">
+      <button class="open-edit-social-btn w-full py-2.5 px-4 rounded-xl bg-indigo-600/20 border border-indigo-500/40 text-indigo-300 text-sm font-semibold flex items-center justify-center gap-2">
+        <i class="fa-solid fa-pen-to-square"></i> Edit Social Links
+      </button>
+      <div class="flex items-center justify-between">
+        <span class="text-xs text-slate-400 font-medium">Theme Mode</span>
+        <button id="theme-toggle-mobile" class="p-2 rounded-lg bg-slate-800 text-amber-400">
+          <i id="theme-toggle-icon-mobile" class="fa-solid fa-sun"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="relative z-10">
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Hero Text Content -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            
+            <!-- Open For Opportunities Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel border border-emerald-500/30 text-emerald-400 text-xs font-semibold shadow-inner">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span>Available for Technical Projects & Internships</span>
+            </div>
+
+            <!-- Main Heading -->
+            <div class="space-y-2">
+              <h2 class="text-sm sm:text-base font-semibold uppercase tracking-widest text-indigo-400">
+                Hello & Welcome 👋
+              </h2>
+              <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading tracking-tight leading-none text-white">
+                Ranveer <span class="gradient-text">Singh</span>
+              </h1>
+            </div>
+
+            <!-- Subtitle Badge / Persona -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-base sm:text-xl font-medium text-slate-300">
+              <span class="text-indigo-400 font-semibold">B.Tech Student</span>
+              <span class="text-slate-600 dark:text-slate-600">•</span>
+              <span class="gradient-text-cyan font-semibold">AI & Technology Enthusiast</span>
+            </div>
+
+            <!-- College & Location Meta -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs sm:text-sm text-slate-400">
+              <div class="flex items-center gap-1.5">
+                <i class="fa-solid fa-graduation-cap text-indigo-400"></i>
+                <span>JECRC UNIVERSITY</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <i class="fa-solid fa-location-dot text-rose-400"></i>
+                <span>Jaipur, India</span>
+              </div>
+            </div>
+
+            <!-- Short Professional Introduction -->
+            <p class="text-base sm:text-lg text-slate-300 dark:text-slate-400 max-w-2xl leading-relaxed mx-auto lg:mx-0">
+              I am a dedicated B.Tech student interested in technology, artificial intelligence, web development, and digital productivity. Committed to mastering modern tools and engineering smart, high-impact practical solutions.
+            </p>
+
+            <!-- CTA Action Buttons -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+              <a href="#projects" class="btn-glow px-7 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white font-semibold text-sm sm:text-base flex items-center gap-2.5 transition-all">
+                <span>View Projects</span>
+                <i class="fa-solid fa-arrow-right-long text-xs"></i>
+              </a>
+
+              <a href="#contact" class="px-7 py-3.5 rounded-xl glass-panel hover:border-indigo-400/50 text-white font-semibold text-sm sm:text-base flex items-center gap-2.5 transition-all">
+                <span>Contact Me</span>
+                <i class="fa-regular fa-paper-plane text-xs"></i>
+              </a>
+
+              <button class="open-edit-social-btn p-3.5 rounded-xl glass-panel hover:border-indigo-400/50 text-indigo-300 hover:text-white transition-all text-sm" title="Edit LinkedIn & GitHub">
+                <i class="fa-solid fa-gear"></i>
+              </button>
+            </div>
+
+            <!-- Quick Socials Bar -->
+            <div class="flex items-center justify-center lg:justify-start gap-3 pt-3 text-slate-400 text-sm">
+              <span class="text-xs uppercase tracking-wider font-semibold text-slate-500">Connect:</span>
+              <a href="#" class="dynamic-github-link hover:text-indigo-400 transition-colors flex items-center gap-1">
+                <i class="fa-brands fa-github"></i> <span>GitHub</span>
+              </a>
+              <span>•</span>
+              <a href="#" class="dynamic-linkedin-link hover:text-indigo-400 transition-colors flex items-center gap-1">
+                <i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span>
+              </a>
+              <span>•</span>
+              <button class="copy-email-btn hover:text-indigo-400 transition-colors flex items-center gap-1">
+                <i class="fa-regular fa-envelope"></i> <span>Email</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Hero Visual & Floating Tech Cards -->
+          <div class="lg:col-span-5 flex justify-center relative">
+            <div class="relative w-72 sm:w-88 h-72 sm:h-88">
+              
+              <!-- Ambient Glow -->
+              <div class="absolute inset-0 bg-gradient-to-tr from-indigo-600/30 to-cyan-400/30 rounded-full blur-2xl animate-pulse"></div>
+
+              <!-- Center Interactive Avatar Emblem -->
+              <div class="w-full h-full glass-card rounded-3xl p-8 flex flex-col items-center justify-center text-center border-2 border-indigo-500/30 relative overflow-hidden shadow-2xl">
+                <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center text-4xl text-white font-extrabold shadow-xl mb-4 transform hover:rotate-6 transition-transform">
+                  RS
+                </div>
+                <h3 class="text-xl font-bold font-heading text-white">Ranveer Singh</h3>
+                <p class="text-xs text-indigo-300 font-medium mt-1">B.Tech Engineering</p>
+                <div class="mt-4 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-mono text-cyan-400">
+                  📍 JECRC • Jaipur
+                </div>
+              </div>
+
+              <!-- Floating Tech Badges -->
+              <div class="absolute -top-4 -right-4 glass-panel px-3.5 py-2 rounded-xl border border-indigo-500/30 text-xs font-bold text-indigo-300 flex items-center gap-2 shadow-lg animate-float-slow">
+                <i class="fa-solid fa-brain text-purple-400"></i>
+                <span>Generative AI</span>
+              </div>
+
+              <div class="absolute -bottom-4 -left-4 glass-panel px-3.5 py-2 rounded-xl border border-cyan-500/30 text-xs font-bold text-cyan-300 flex items-center gap-2 shadow-lg animate-float-delayed">
+                <i class="fa-brands fa-python text-emerald-400"></i>
+                <span>Python & Web Dev</span>
+              </div>
+
+              <div class="absolute top-1/2 -left-8 glass-panel px-3 py-1.5 rounded-xl border border-amber-500/30 text-xs font-bold text-amber-300 flex items-center gap-1.5 shadow-lg hidden sm:flex">
+                <i class="fa-solid fa-bolt text-yellow-400"></i>
+                <span>Productivity</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT ME SECTION -->
+    <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-800/50 relative">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <span class="text-xs uppercase font-bold tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
+            About Me
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white">
+            Driven by Curiosity, <span class="gradient-text">Fueled by Code</span>
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+            Bridging technical theory and hands-on implementation to create smart digital experiences.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+          
+          <!-- Left Column: Story & Narrative -->
+          <div class="lg:col-span-7 glass-card p-8 rounded-3xl border border-slate-800 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <h3 class="text-2xl font-bold font-heading text-white flex items-center gap-2.5">
+                <i class="fa-solid fa-rocket text-indigo-400"></i>
+                <span>My Journey & Vision</span>
+              </h3>
+              <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                I am a B.Tech student at <span class="text-indigo-400 font-semibold">JECRC University, Jaipur</span> with a genuine passion for modern technology, Artificial Intelligence, web development, and digital productivity systems.
+              </p>
+              <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                My journey centers around breaking down complex problems into clean, practical code. Whether it's experimenting with generative AI models, engineering responsive web interfaces, or creating optimized productivity workflows, I focus on building tools that provide tangible utility.
+              </p>
+              <p class="text-slate-400 leading-relaxed text-sm">
+                I constantly challenge myself with new frameworks, contribute to university projects, and collaborate with peers to create software that makes an impact.
+              </p>
+            </div>
+
+            <!-- Key Highlight Points -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-800">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-code text-sm"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Modern Web Engineering</h4>
+                  <p class="text-xs text-slate-400">Responsive, accessible, fast loading UIs</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-brain text-sm"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">AI & Automation</h4>
+                  <p class="text-xs text-slate-400">Generative AI & Python toolchains</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Stats & Focus Card -->
+          <div class="lg:col-span-5 flex flex-col justify-between gap-6">
+            
+            <!-- Quick Stats Grid -->
+            <div class="grid grid-cols-2 gap-4">
+              <div class="glass-card p-6 rounded-2xl border border-slate-800 text-center group hover:border-indigo-500/50 transition-all">
+                <span class="text-3xl sm:text-4xl font-extrabold font-heading text-indigo-400 block mb-1">3+</span>
+                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Core Projects</span>
+              </div>
+
+              <div class="glass-card p-6 rounded-2xl border border-slate-800 text-center group hover:border-cyan-500/50 transition-all">
+                <span class="text-3xl sm:text-4xl font-extrabold font-heading text-cyan-400 block mb-1">8+</span>
+                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tech Skills</span>
+              </div>
+
+              <div class="glass-card p-6 rounded-2xl border border-slate-800 text-center group hover:border-purple-500/50 transition-all">
+                <span class="text-xl sm:text-2xl font-extrabold font-heading text-purple-400 block mb-1">JECRC</span>
+                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">University</span>
+              </div>
+
+              <div class="glass-card p-6 rounded-2xl border border-slate-800 text-center group hover:border-emerald-500/50 transition-all">
+                <span class="text-xl sm:text-2xl font-extrabold font-heading text-emerald-400 block mb-1">Jaipur</span>
+                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">India</span>
+              </div>
+            </div>
+
+            <!-- Current Focus Card -->
+            <div class="glass-card p-6 rounded-2xl border border-indigo-500/20 relative overflow-hidden bg-gradient-to-br from-indigo-950/40 to-slate-900">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <h4 class="text-xs uppercase tracking-wider font-bold text-indigo-300">Current Academic Focus</h4>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Deepening hands-on mastery in <strong>Generative AI applications</strong>, <strong>Fullstack Web Development</strong>, and scalable algorithmic thinking.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. EDUCATION SECTION -->
+    <section id="education" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-800/50 bg-slate-950/40 relative">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <span class="text-xs uppercase font-bold tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
+            Education
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white">
+            Academic <span class="gradient-text">Foundation</span>
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Formal technical education, foundational coursework, and practical development tracks.
+          </p>
+        </div>
+
+        <!-- Timeline / Education Card -->
+        <div class="max-w-4xl mx-auto">
+          <div class="glass-card p-8 sm:p-10 rounded-3xl border border-indigo-500/30 relative overflow-hidden shadow-2xl">
+            
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+              <div class="space-y-1">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold mb-2">
+                  <i class="fa-solid fa-graduation-cap"></i> Undergraduate Degree
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-extrabold font-heading text-white">Bachelor of Technology (B.Tech)</h3>
+                <p class="text-base text-indigo-300 font-semibold flex items-center gap-2">
+                  <span>JECRC UNIVERSITY</span>
+                  <span class="text-slate-500">•</span>
+                  <span class="text-slate-400 text-sm font-normal">Jaipur, Rajasthan, India</span>
+                </p>
+              </div>
+
+              <div class="text-left md:text-right">
+                <span class="px-4 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-xs font-mono text-cyan-400 font-semibold">
+                  Undergraduate Track
+                </span>
+              </div>
+            </div>
+
+            <!-- Description & Coursework -->
+            <div class="pt-6 space-y-6">
+              <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                Undergoing rigorous technical training covering computer science fundamentals, software engineering methodologies, artificial intelligence paradigms, and hands-on application development.
+              </p>
+
+              <!-- Relevant Learning Areas -->
+              <div>
+                <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mb-3">
+                  Core Coursework & Learning Areas:
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                  <div class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-800/40 border border-slate-800 text-slate-300">
+                    <i class="fa-solid fa-brain text-purple-400"></i>
+                    <span>Artificial Intelligence & ML Concepts</span>
+                  </div>
+                  <div class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-800/40 border border-slate-800 text-slate-300">
+                    <i class="fa-solid fa-globe text-cyan-400"></i>
+                    <span>Modern Web Technologies & Frontend</span>
+                  </div>
+                  <div class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-800/40 border border-slate-800 text-slate-300">
+                    <i class="fa-solid fa-code-branch text-emerald-400"></i>
+                    <span>Data Structures & Algorithmic Design</span>
+                  </div>
+                  <div class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-800/40 border border-slate-800 text-slate-300">
+                    <i class="fa-solid fa-layer-group text-indigo-400"></i>
+                    <span>Object-Oriented Programming (OOP)</span>
+                  </div>
+                  <div class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-800/40 border border-slate-800 text-slate-300">
+                    <i class="fa-solid fa-database text-amber-400"></i>
+                    <span>Database Systems & API Architecture</span>
+                  </div>
+                  <div class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-800/40 border border-slate-800 text-slate-300">
+                    <i class="fa-solid fa-bolt text-rose-400"></i>
+                    <span>Digital Productivity & Dev Tools</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. SKILLS SECTION -->
+    <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-800/50 relative">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <span class="text-xs uppercase font-bold tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
+            Skills & Competencies
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white">
+            Technical <span class="gradient-text">Proficiencies</span>
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Core technologies, programming languages, and productivity tools I use to build solutions.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+          <button class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-indigo-600 text-white shadow-lg shadow-indigo-500/25" data-filter="all">
+            All Skills
+          </button>
+          <button class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-800/60 text-slate-400 hover:text-white" data-filter="frontend">
+            Frontend & Web
+          </button>
+          <button class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-800/60 text-slate-400 hover:text-white" data-filter="programming">
+            Programming
+          </button>
+          <button class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-800/60 text-slate-400 hover:text-white" data-filter="ai">
+            Artificial Intelligence
+          </button>
+          <button class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-800/60 text-slate-400 hover:text-white" data-filter="tools">
+            Productivity & Tools
+          </button>
+        </div>
+
+        <!-- Skills Grid Container -->
+        <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Dynamically Rendered by JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. PROJECTS SECTION -->
+    <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-800/50 bg-slate-950/40 relative">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <span class="text-xs uppercase font-bold tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
+            Featured Projects
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white">
+            Practical Work & <span class="gradient-text">Creations</span>
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Hands-on projects highlighting expertise across web engineering, artificial intelligence, and digital productivity.
+          </p>
+        </div>
+
+        <!-- Project Filter Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+          <button class="project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-indigo-600 text-white shadow-lg shadow-indigo-500/25" data-filter="all">
+            All Projects
+          </button>
+          <button class="project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-800/60 text-slate-400 hover:text-white" data-filter="web">
+            Web Dev
+          </button>
+          <button class="project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-800/60 text-slate-400 hover:text-white" data-filter="ai">
+            Artificial Intelligence
+          </button>
+          <button class="project-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-800/60 text-slate-400 hover:text-white" data-filter="productivity">
+            Student Productivity
+          </button>
+        </div>
+
+        <!-- Projects Grid Container -->
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Dynamically Rendered by JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. ACHIEVEMENTS SECTION -->
+    <section id="achievements" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-800/50 relative">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+          <div class="space-y-2 text-center md:text-left">
+            <span class="text-xs uppercase font-bold tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
+              Milestones
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white">
+              Achievements & <span class="gradient-text">Certifications</span>
+            </h2>
+            <p class="text-slate-400 text-sm sm:text-base">
+              Recognitions, specialized courses, hackathons, and technical certifications.
+            </p>
+          </div>
+
+          <!-- Add Achievement Interactive Button -->
+          <button id="open-add-achievement-btn" class="px-5 py-2.5 rounded-xl glass-panel border border-indigo-500/30 text-indigo-300 hover:text-white hover:bg-indigo-600/30 text-sm font-semibold flex items-center gap-2 transition-all shadow-md">
+            <i class="fa-solid fa-plus"></i>
+            <span>Add Achievement</span>
+          </button>
+        </div>
+
+        <!-- Achievement Filter Tabs -->
+        <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-10">
+          <button class="achieve-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-indigo-600 text-white shadow-lg shadow-indigo-500/25" data-filter="all">
+            All
+          </button>
+          <button class="achieve-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-800/60 text-slate-400 hover:text-white" data-filter="certifications">
+            Certifications
+          </button>
+          <button class="achieve-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-800/60 text-slate-400 hover:text-white" data-filter="hackathons">
+            Hackathons
+          </button>
+          <button class="achieve-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-800/60 text-slate-400 hover:text-white" data-filter="courses">
+            Courses
+          </button>
+          <button class="achieve-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-800/60 text-slate-400 hover:text-white" data-filter="awards">
+            Awards & Honors
+          </button>
+        </div>
+
+        <!-- Achievements Grid Container -->
+        <div id="achievements-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Dynamically Rendered by JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. CONTACT SECTION -->
+    <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-800/50 bg-slate-950/40 relative">
+      <div class="max-w-6xl mx-auto">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <span class="text-xs uppercase font-bold tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
+            Get In Touch
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white">
+            Let's Connect & <span class="gradient-text">Collaborate</span>
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base">
+            Have a question, technical project idea, or opportunity? Feel free to reach out directly.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          
+          <!-- Contact Info & Editable Socials Cards -->
+          <div class="lg:col-span-5 space-y-4">
+            
+            <!-- Email Card -->
+            <div class="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between group">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0 text-xl border border-indigo-500/20">
+                  <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs uppercase font-bold text-slate-400">Direct Email</h4>
+                  <p class="text-sm font-semibold text-white select-all break-all">girvarsingh774@gmail.com</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 pt-2 border-t border-slate-800">
+                <button class="copy-email-btn flex-1 py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 transition-colors flex items-center justify-center gap-1.5">
+                  <i class="fa-regular fa-copy"></i> Copy Email
+                </button>
+                <a href="mailto:girvarsingh774@gmail.com" class="flex-1 py-2 px-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-xs font-semibold text-white transition-colors flex items-center justify-center gap-1.5">
+                  <i class="fa-regular fa-paper-plane"></i> Send Mail
+                </a>
+              </div>
+            </div>
+
+            <!-- LinkedIn Card (Editable) -->
+            <div class="glass-card p-6 rounded-2xl border border-slate-800 flex items-center justify-between group">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 text-xl border border-blue-500/20">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs uppercase font-bold text-slate-400">LinkedIn Profile</h4>
+                  <p id="contact-linkedin-status" class="text-xs text-slate-400 truncate max-w-[180px] sm:max-w-[220px]">
+                    Click "Edit Links" to set your profile
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button class="open-edit-social-btn p-2.5 rounded-lg bg-slate-800/80 hover:bg-indigo-600/30 text-indigo-300 hover:text-white transition-colors" title="Edit LinkedIn URL">
+                  <i class="fa-solid fa-pen-to-square text-xs"></i>
+                </button>
+                <a href="#" class="dynamic-linkedin-link p-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition-colors" title="Open LinkedIn">
+                  <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- GitHub Card (Editable) -->
+            <div class="glass-card p-6 rounded-2xl border border-slate-800 flex items-center justify-between group">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-slate-700/20 text-slate-300 flex items-center justify-center shrink-0 text-xl border border-slate-700/30">
+                  <i class="fa-brands fa-github"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs uppercase font-bold text-slate-400">GitHub Profile</h4>
+                  <p id="contact-github-status" class="text-xs text-slate-400 truncate max-w-[180px] sm:max-w-[220px]">
+                    Click "Edit Links" to set your profile
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button class="open-edit-social-btn p-2.5 rounded-lg bg-slate-800/80 hover:bg-indigo-600/30 text-indigo-300 hover:text-white transition-colors" title="Edit GitHub URL">
+                  <i class="fa-solid fa-pen-to-square text-xs"></i>
+                </button>
+                <a href="#" class="dynamic-github-link p-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition-colors" title="Open GitHub">
+                  <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Location & University Card -->
+            <div class="glass-card p-6 rounded-2xl border border-slate-800 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center shrink-0 text-xl border border-rose-500/20">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h4 class="text-xs uppercase font-bold text-slate-400">Location</h4>
+                <p class="text-sm font-semibold text-white">Jaipur, Rajasthan, India</p>
+                <p class="text-xs text-indigo-300">JECRC University</p>
+              </div>
+            </div>
+
+            <!-- Quick Edit Social Links Banner -->
+            <div class="p-4 rounded-2xl bg-indigo-950/40 border border-indigo-500/30 flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-link text-indigo-400"></i>
+                <span class="text-xs text-slate-300 font-medium">Update LinkedIn & GitHub links</span>
+              </div>
+              <button class="open-edit-social-btn px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition-all">
+                Edit Links
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Contact Message Form -->
+          <div class="lg:col-span-7 glass-card p-8 rounded-3xl border border-slate-800 shadow-2xl">
+            <h3 class="text-2xl font-bold font-heading text-white mb-2">Send a Message</h3>
+            <p class="text-sm text-slate-400 mb-6">Fill out the form below to initiate an email directly to Ranveer Singh.</p>
+
+            <form id="contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="contact-name" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Your Name *</label>
+                  <input type="text" id="contact-name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700/60 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 text-white placeholder-slate-500 text-sm transition-all" />
+                </div>
+                <div>
+                  <label for="contact-email" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Your Email *</label>
+                  <input type="email" id="contact-email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700/60 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 text-white placeholder-slate-500 text-sm transition-all" />
+                </div>
+              </div>
+
+              <div>
+                <label for="contact-subject" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Subject</label>
+                <input type="text" id="contact-subject" placeholder="Project Inquiry / Collaboration / Opportunity" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700/60 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 text-white placeholder-slate-500 text-sm transition-all" />
+              </div>
+
+              <div>
+                <label for="contact-message" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Message *</label>
+                <textarea id="contact-message" required rows="4" placeholder="Hi Ranveer, I came across your portfolio and wanted to discuss..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700/60 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 text-white placeholder-slate-500 text-sm transition-all"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white font-semibold text-sm transition-all shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane text-xs"></i>
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      
+      <!-- Brand & Bio -->
+      <div class="space-y-1">
+        <div class="flex items-center justify-center md:justify-start gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-cyan-400 flex items-center justify-center font-heading font-extrabold text-white text-xs">
+            RS
+          </div>
+          <span class="font-heading font-bold text-lg text-white">Ranveer Singh</span>
+        </div>
+        <p class="text-xs text-slate-400 max-w-sm">
+          B.Tech Student at JECRC University • Exploring AI & Modern Web Development
+        </p>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-slate-400">
+        <a href="#hero" class="hover:text-white transition-colors">Home</a>
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#education" class="hover:text-white transition-colors">Education</a>
+        <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+        <a href="#achievements" class="hover:text-white transition-colors">Achievements</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </div>
+
+      <!-- Back to Top & Socials -->
+      <div class="flex items-center gap-3">
+        <a href="#" class="dynamic-github-link w-8 h-8 rounded-lg bg-slate-800/80 hover:bg-indigo-600 text-slate-300 hover:text-white flex items-center justify-center text-sm transition-all" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="#" class="dynamic-linkedin-link w-8 h-8 rounded-lg bg-slate-800/80 hover:bg-indigo-600 text-slate-300 hover:text-white flex items-center justify-center text-sm transition-all" title="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="#hero" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-indigo-600 text-slate-300 hover:text-white flex items-center justify-center text-sm transition-all" title="Back to Top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-slate-900 text-center text-xs text-slate-500">
+      <p>© 2026 Ranveer Singh. All rights reserved. Built with modern web standards and ready for Vercel deployment.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL: EDIT SOCIAL LINKS (LINKEDIN & GITHUB) -->
+  <div id="edit-social-modal" class="fixed inset-0 bg-black/75 backdrop-blur-md z-50 hidden items-center justify-center p-4">
+    <div class="glass-panel w-full max-w-lg p-6 sm:p-8 rounded-3xl border border-indigo-500/30 shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
+      
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg border border-indigo-500/20">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold font-heading text-white">Edit Social Links</h3>
+            <p class="text-xs text-slate-400">Configure your live LinkedIn & GitHub profile URLs</p>
+          </div>
+        </div>
+        <button id="close-social-modal-btn" class="p-2 text-slate-400 hover:text-white rounded-lg">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4">
+        <!-- LinkedIn Input -->
+        <div>
+          <label for="modal-linkedin-input" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+            <i class="fa-brands fa-linkedin text-blue-400"></i> LinkedIn Profile URL
+          </label>
+          <input type="url" id="modal-linkedin-input" placeholder="https://linkedin.com/in/ranveer-singh" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/60 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 text-white placeholder-slate-500 text-sm font-mono transition-all" />
+        </div>
+
+        <!-- GitHub Input -->
+        <div>
+          <label for="modal-github-input" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+            <i class="fa-brands fa-github text-slate-300"></i> GitHub Profile URL
+          </label>
+          <input type="url" id="modal-github-input" placeholder="https://github.com/ranveer-singh" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/60 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 text-white placeholder-slate-500 text-sm font-mono transition-all" />
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-indigo-950/40 border border-indigo-500/20 text-xs text-slate-300 flex items-start gap-2.5">
+          <i class="fa-solid fa-circle-info text-indigo-400 mt-0.5"></i>
+          <span>These links are saved directly to your browser's local storage and update all LinkedIn & GitHub buttons across the website instantly.</span>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end gap-3 pt-6 mt-6 border-t border-slate-800">
+        <button id="cancel-social-modal-btn" class="px-5 py-2.5 rounded-xl border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 text-sm font-medium transition-colors">
+          Cancel
+        </button>
+        <button id="save-social-btn" class="px-6 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all shadow-lg shadow-indigo-600/30 flex items-center gap-2">
+          <i class="fa-solid fa-floppy-disk"></i>
+          <span>Save Changes</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL: PROJECT DETAIL PREVIEW -->
+  <div id="project-detail-modal" class="fixed inset-0 bg-black/75 backdrop-blur-md z-50 hidden items-center justify-center p-4">
+    <div class="glass-panel w-full max-w-2xl p-6 sm:p-8 rounded-3xl border border-indigo-500/30 shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
+      
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
+        <div>
+          <h3 id="project-modal-title" class="text-2xl font-bold font-heading text-white">Project Details</h3>
+          <p id="project-modal-tagline" class="text-xs text-indigo-400 font-medium mt-0.5">Tagline preview</p>
+        </div>
+        <button id="close-project-modal-btn" class="p-2 text-slate-400 hover:text-white rounded-lg">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="space-y-5 max-h-[60vh] overflow-y-auto pr-1">
+        <div>
+          <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-2">Description</h4>
+          <p id="project-modal-desc" class="text-sm text-slate-300 leading-relaxed"></p>
+        </div>
+
+        <div>
+          <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-2">Technologies Used</h4>
+          <div id="project-modal-tech" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <div>
+          <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-2">Key Features & Architecture</h4>
+          <ul id="project-modal-features" class="space-y-2"></ul>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end gap-3 pt-6 mt-6 border-t border-slate-800">
+        <a href="#contact" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all flex items-center gap-2">
+          <span>Discuss Project</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL: ADD CUSTOM ACHIEVEMENT -->
+  <div id="add-achievement-modal" class="fixed inset-0 bg-black/75 backdrop-blur-md z-50 hidden items-center justify-center p-4">
+    <div class="glass-panel w-full max-w-lg p-6 sm:p-8 rounded-3xl border border-indigo-500/30 shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
+      
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg border border-indigo-500/20">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold font-heading text-white">Add Achievement</h3>
+            <p class="text-xs text-slate-400">Record a new certificate, hackathon, or course</p>
+          </div>
+        </div>
+        <button id="close-add-achievement-btn" class="p-2 text-slate-400 hover:text-white rounded-lg">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <label for="achieve-title-input" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Achievement Title *</label>
+          <input type="text" id="achieve-title-input" required placeholder="e.g. AWS Cloud Practitioner / Hackathon Winner" class="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700/60 text-white text-sm focus:border-indigo-500 focus:outline-none" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label for="achieve-category-input" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Category</label>
+            <select id="achieve-category-input" class="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700/60 text-white text-sm focus:border-indigo-500 focus:outline-none">
+              <option value="certifications">Certifications</option>
+              <option value="hackathons">Hackathons</option>
+              <option value="courses">Courses</option>
+              <option value="awards">Awards</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="achieve-year-input" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Year</label>
+            <input type="text" id="achieve-year-input" placeholder="2026" class="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700/60 text-white text-sm focus:border-indigo-500 focus:outline-none" />
+          </div>
+        </div>
+
+        <div>
+          <label for="achieve-issuer-input" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Organization / Issuer</label>
+          <input type="text" id="achieve-issuer-input" placeholder="e.g. Coursera / JECRC / Google" class="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700/60 text-white text-sm focus:border-indigo-500 focus:outline-none" />
+        </div>
+
+        <div>
+          <label for="achieve-desc-input" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Description *</label>
+          <textarea id="achieve-desc-input" rows="3" placeholder="Brief summary of skills gained or achievement details..." class="w-full px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700/60 text-white text-sm focus:border-indigo-500 focus:outline-none"></textarea>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end gap-3 pt-6 mt-6 border-t border-slate-800">
+        <button id="cancel-add-achievement-btn" class="px-5 py-2.5 rounded-xl border border-slate-700 text-slate-300 hover:text-white text-sm">
+          Cancel
+        </button>
+        <button id="save-achievement-btn" class="px-6 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all flex items-center gap-2">
+          <i class="fa-solid fa-plus"></i> Add to Portfolio
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Application Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
